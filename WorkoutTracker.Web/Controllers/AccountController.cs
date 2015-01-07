@@ -5,14 +5,15 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using MongoDB.AspNet.Identity;
 using WorkoutTracker.Web.Models;
 using WorkoutTracker.Web.Providers;
 using WorkoutTracker.Web.Results;
@@ -24,20 +25,20 @@ namespace WorkoutTracker.Web.Controllers
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
-        private ApplicationUserManager _userManager;
+        private UserManager<ApplicationUser> _userManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager,
+        public AccountController(UserManager<ApplicationUser> userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
         }
 
-        public ApplicationUserManager UserManager
+        public UserManager<ApplicationUser> UserManager
         {
             get
             {
@@ -87,7 +88,7 @@ namespace WorkoutTracker.Web.Controllers
 
             List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (IdentityUserLogin linkedAccount in user.Logins)
+            foreach (var linkedAccount in user.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
