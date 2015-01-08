@@ -12,6 +12,11 @@ namespace WorkoutTracker.Data
     {
         public MongoDatabase Database;
 
+        public MongoCollection<Workout> Workouts
+        {
+            get { return Database.GetCollection<Workout>("workouts"); }
+        }
+
         public WorkoutTrackerContext()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["WorkoutTrackerConnection"].ConnectionString;

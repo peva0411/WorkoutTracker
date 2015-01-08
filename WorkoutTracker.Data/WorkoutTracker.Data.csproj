@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workout.cs" />
     <Compile Include="WorkoutTrackerContext.cs" />
   </ItemGroup>
   <ItemGroup>
