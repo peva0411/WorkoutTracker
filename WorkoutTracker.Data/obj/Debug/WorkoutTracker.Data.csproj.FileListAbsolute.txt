@@ -4,7 +4,6 @@ c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracke
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\bin\Debug\MongoDB.Driver.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\bin\Debug\MongoDB.Bson.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\bin\Debug\MongoDB.Driver.xml
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.csprojResolveAssemblyReference.cache
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.pdb
 C:\Projects\WorkoutTracker\WorkoutTracker.Data\bin\Debug\WorkoutTracker.Data.dll
@@ -16,3 +15,4 @@ C:\Projects\WorkoutTracker\WorkoutTracker.Data\bin\Debug\MongoDB.Driver.xml
 C:\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.csprojResolveAssemblyReference.cache
 C:\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.dll
 C:\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.pdb
+C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Data\obj\Debug\WorkoutTracker.Data.csprojResolveAssemblyReference.cache

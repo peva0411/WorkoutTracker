@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Results;
 using Microsoft.Ajax.Utilities;
+using MongoDB.Driver.Builders;
 using WorkoutTracker.Data;
 
 namespace WorkoutTracker.Web.Controllers
@@ -22,9 +23,12 @@ namespace WorkoutTracker.Web.Controllers
 
         public IHttpActionResult Get()
         {
-            var workouts = workoutTrackerContext.Workouts.FindAllAs<Workout>();
-
-            return Ok(workouts);
+            var workouts =
+                workoutTrackerContext.Workouts
+                                     .FindAs<Workout>(
+                    Query<Workout>.Where(w => w.Username == User.Identity.Name));
+             
+            return Ok(workouts.ToList());
         }
 
         // POST api/workouts

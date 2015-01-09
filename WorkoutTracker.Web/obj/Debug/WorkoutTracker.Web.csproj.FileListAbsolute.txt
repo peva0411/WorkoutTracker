@@ -2,10 +2,7 @@ c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracke
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\WorkoutTracker.Web.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\WorkoutTracker.Web.pdb
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Antlr3.Runtime.dll
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\EntityFramework.dll
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\EntityFramework.SqlServer.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.Core.dll
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.Owin.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.dll
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
@@ -49,11 +46,8 @@ c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracke
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\System.Web.WebPages.Deployment.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\System.Web.WebPages.Razor.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Antlr3.Runtime.pdb
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\EntityFramework.xml
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\EntityFramework.SqlServer.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.Core.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.Owin.xml
-c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
 c:\users\phil\documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Security.xml
@@ -133,3 +127,6 @@ C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Security.Google
 C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\System.Web.Http.Owin.xml
+C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.dll
+C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.pdb
+C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.xml
