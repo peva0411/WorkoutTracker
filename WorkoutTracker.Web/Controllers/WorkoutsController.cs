@@ -18,19 +18,17 @@ namespace WorkoutTracker.Web.Controllers
     [Authorize]
     public class WorkoutsController : ApiController
     {
-        private readonly IIdentity _userIdentity;
-
+        
         private readonly IWorkoutRepository _workoutRepository;
 
         public WorkoutsController()
         {
             _workoutRepository =  new WorkoutRepository(new WorkoutTrackerContext());
-            _userIdentity = User.Identity;
         }
 
         public IHttpActionResult Get()
         {
-            var workouts = _workoutRepository.GetUserWorkouts(_userIdentity.Name);
+            var workouts = _workoutRepository.GetUserWorkouts(User.Identity.Name);
              
             return Ok(workouts);
         }
@@ -53,7 +51,7 @@ namespace WorkoutTracker.Web.Controllers
             _workoutRepository.Save(workout);
         }
 
-        [Route("api/workouts/{id}/exercises")]
+        [Route("api/workouts/{workoutId}/exercises")]
         public IHttpActionResult PostExercise(string workoutId, Exercise exercise)
         {
             var workout = _workoutRepository.GetWorkoutById(workoutId);

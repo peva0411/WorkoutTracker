@@ -19,10 +19,7 @@ namespace WorkoutTracker.Web.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-            Context.Database.GetStats();
-
-            return Json(Context.Database.Server.BuildInfo, JsonRequestBehavior.AllowGet);
+            return View();
         }
     }
 }
