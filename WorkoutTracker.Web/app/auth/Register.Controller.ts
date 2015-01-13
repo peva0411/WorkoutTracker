@@ -2,7 +2,7 @@ module app.auth {
     'use strict';
 
     interface IRegisterScope {
-        
+        title:string;
     }
 
     class RegisterController implements IRegisterScope {
