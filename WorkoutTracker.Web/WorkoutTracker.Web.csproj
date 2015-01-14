@@ -301,6 +301,7 @@
     <TypeScriptCompile Include="app\auth\Register.Controller.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
     <TypeScriptCompile Include="app\services\authToken.services.ts" />
+    <TypeScriptCompile Include="app\services\register.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

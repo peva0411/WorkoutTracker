@@ -8,6 +8,8 @@ var app;
                 var vm = this;
                 vm.title = "test";
             }
+            RegisterController.prototype.submit = function () {
+            };
             RegisterController.$inject = ['app.services.AuthTokenService'];
             return RegisterController;
         })();
