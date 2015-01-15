@@ -7,9 +7,14 @@
 
      class AuthInterceptorService implements IAuthInterceptorService {
 
-         constructor(private authTokenService: app.services.IAuthTokenService) { }
+         constructor(private authTokenService: app.services.IAuthTokenService) {             
+         }
 
-         request(config: ng.IRequestConfig): ng.IRequestConfig {
+         request = (config: ng.IRequestConfig) : ng.IRequestConfig =>{
+
+             if (config.url.indexOf('api') === -1)
+                 return config;
+
              var token = this.authTokenService.getToken();
 
              if (token)

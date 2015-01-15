@@ -20,7 +20,7 @@ var app;
                 this.registerService.register(registerViewModel).then(function (response) {
                     console.log("registered");
 
-                    _this.authTokenService.requestToken(registerViewModel).then(function (response) {
+                    _this.registerService.requestToken(registerViewModel).then(function (response) {
                         _this.authTokenService.setToken(response.access_token);
                     });
                 }).catch(function (response) {

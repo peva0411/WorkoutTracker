@@ -11,7 +11,7 @@ module app.services {
         setToken(token:string): void;
         isAuthenticated(): boolean;
         removeToken(): void;
-        requestToken(registerViewModel: app.services.IRegisterViewModel):ng.IPromise<ITokenResponse>;
+        
     }
 
     class AuthTokenService implements  IAuthTokenService {
@@ -19,7 +19,7 @@ module app.services {
         cachedToken: string
         tokenKey: string = 'userToken'
 
-        constructor(private $window: ng.IWindowService, private $q: ng.IQService, private $http: ng.IHttpService) { }
+        constructor(private $window: ng.IWindowService) { }
 
         setToken(token: string) {
             this.cachedToken = token;
@@ -33,25 +33,6 @@ module app.services {
             return this.cachedToken;
         }
 
-        requestToken(registerViewModel: app.services.IRegisterViewModel): ng.IPromise<ITokenResponse> {
-            var tokenEndpoint = '/token';
-
-            var requestPayload = "grant_type=password&username="
-                + registerViewModel.email
-                + "&password="
-                + registerViewModel.password;
-
-            return this.$http(<ng.IRequestConfig>{
-                method: 'POST',
-                url: tokenEndpoint,
-                data: requestPayload,
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            }).then((response: ng.IHttpPromiseCallbackArg<ITokenResponse>): ITokenResponse=> {
-                return response.data;
-            });
-
-        }
-
         isAuthenticated(): boolean {
             return !!this.getToken();
         }
@@ -62,9 +43,9 @@ module app.services {
         }
     }
 
-    factory.$inject = ["$window", "$q", "$http"];
-    function factory($Window:ng.IWindowService, $q: ng.IQService, $http:ng.IHttpService) {
-        return new AuthTokenService($Window, $q, $http);
+    factory.$inject = ["$window"];
+    function factory($Window:ng.IWindowService) {
+        return new AuthTokenService($Window);
     }
 
     angular.module('app.services')

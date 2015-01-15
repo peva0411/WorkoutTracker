@@ -15,7 +15,8 @@ module app.auth {
         password: string;
         confirmPassword:string;
 
-        constructor(private authTokenService: app.services.IAuthTokenService, private registerService: app.services.IRegisterService) {
+        constructor(private authTokenService: app.services.IAuthTokenService,
+                   private registerService: app.services.IRegisterService) {
             var vm = this;
         }
 
@@ -30,7 +31,7 @@ module app.auth {
                 .then((response: any): void=> {
                     console.log("registered");
 
-                this.authTokenService.requestToken(registerViewModel)
+                this.registerService.requestToken(registerViewModel)
                     .then((response: app.services.ITokenResponse): void=> {
                         this.authTokenService.setToken(response.access_token);
                 });

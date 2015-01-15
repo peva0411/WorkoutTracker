@@ -18,6 +18,21 @@ var app;
                 });
                 return deferred.promise;
             };
+
+            RegisterService.prototype.requestToken = function (registerViewModel) {
+                var tokenEndpoint = '/token';
+
+                var requestPayload = "grant_type=password&username=" + registerViewModel.email + "&password=" + registerViewModel.password;
+
+                return this.$http({
+                    method: 'POST',
+                    url: tokenEndpoint,
+                    data: requestPayload,
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                }).then(function (response) {
+                    return response.data;
+                });
+            };
             return RegisterService;
         })();
 

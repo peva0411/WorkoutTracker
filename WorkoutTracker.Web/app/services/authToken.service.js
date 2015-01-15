@@ -4,10 +4,8 @@ var app;
         'use strict';
 
         var AuthTokenService = (function () {
-            function AuthTokenService($window, $q, $http) {
+            function AuthTokenService($window) {
                 this.$window = $window;
-                this.$q = $q;
-                this.$http = $http;
                 this.tokenKey = 'userToken';
             }
             AuthTokenService.prototype.setToken = function (token) {
@@ -22,21 +20,6 @@ var app;
                 return this.cachedToken;
             };
 
-            AuthTokenService.prototype.requestToken = function (registerViewModel) {
-                var tokenEndpoint = '/token';
-
-                var requestPayload = "grant_type=password&username=" + registerViewModel.email + "&password=" + registerViewModel.password;
-
-                return this.$http({
-                    method: 'POST',
-                    url: tokenEndpoint,
-                    data: requestPayload,
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                }).then(function (response) {
-                    return response.data;
-                });
-            };
-
             AuthTokenService.prototype.isAuthenticated = function () {
                 return !!this.getToken();
             };
@@ -48,9 +31,9 @@ var app;
             return AuthTokenService;
         })();
 
-        factory.$inject = ["$window", "$q", "$http"];
-        function factory($Window, $q, $http) {
-            return new AuthTokenService($Window, $q, $http);
+        factory.$inject = ["$window"];
+        function factory($Window) {
+            return new AuthTokenService($Window);
         }
 
         angular.module('app.services').factory("app.services.AuthTokenService", factory);

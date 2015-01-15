@@ -27,12 +27,14 @@ namespace WorkoutTracker.Web
             bundles.Add(new ScriptBundle("~/bundles/ng").Include(
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-ui-router.js",
-                    //Features
-                    "~/app/blocks/blocks.module.js",
-                    "~/app/blocks/authInterceptor.service.js",
+
                     "~/app/services/services.module.js",
                     "~/app/services/authToken.service.js",
                     "~/app/services/register.service.js",
+
+                    //Features
+                    "~/app/blocks/blocks.module.js",
+                     "~/app/blocks/authInterceptor.service.js",
                     "~/app/auth/auth.module.js",
                     "~/app/auth/auth.routes.js",
                     "~/app/auth/register.controller.js",

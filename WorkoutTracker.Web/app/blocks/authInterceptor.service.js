@@ -5,17 +5,20 @@
 
         var AuthInterceptorService = (function () {
             function AuthInterceptorService(authTokenService) {
+                var _this = this;
                 this.authTokenService = authTokenService;
+                this.request = function (config) {
+                    if (config.url.indexOf('api') === -1)
+                        return config;
+
+                    var token = _this.authTokenService.getToken();
+
+                    if (token)
+                        config.headers.Authorization = 'Bearer ' + token;
+
+                    return config;
+                };
             }
-            AuthInterceptorService.prototype.request = function (config) {
-                var token = this.authTokenService.getToken();
-
-                if (token)
-                    config.headers.Authorization = 'Bearer ' + token;
-
-                return config;
-            };
-
             AuthInterceptorService.prototype.response = function (response) {
                 return response;
             };
