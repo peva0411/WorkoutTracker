@@ -1,4 +1,4 @@
-﻿var app;
+var app;
 (function (app) {
     (function (auth) {
         'use strict';

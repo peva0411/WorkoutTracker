@@ -299,6 +299,8 @@
     <TypeScriptCompile Include="app\auth\auth.module.ts" />
     <TypeScriptCompile Include="app\auth\auth.routes.ts" />
     <TypeScriptCompile Include="app\auth\Register.Controller.ts" />
+    <TypeScriptCompile Include="app\blocks\authInterceptor.service.ts" />
+    <TypeScriptCompile Include="app\blocks\blocks.module.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
     <TypeScriptCompile Include="app\services\authToken.service.ts" />
     <TypeScriptCompile Include="app\services\register.service.ts" />
