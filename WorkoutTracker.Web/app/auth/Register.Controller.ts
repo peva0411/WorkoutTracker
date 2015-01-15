@@ -2,25 +2,42 @@ module app.auth {
     'use strict';
 
     interface IRegisterScope {
-        title: string;
+        email: string;
         password: string;
         confirmPassword: string;
         submit():void;
     }
 
     class RegisterController implements IRegisterScope {
-        static $inject = ['app.services.AuthTokenService'];
+        static $inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
 
-        title:string;
+        email:string;
         password: string;
         confirmPassword:string;
 
-        constructor(authTokenService: app.services.IAuthTokenService) {
+        constructor(private authTokenService: app.services.IAuthTokenService, private registerService: app.services.IRegisterService) {
             var vm = this;
-            vm.title = "test";
         }
+
         submit(): void {
-           
+            var registerViewModel = <app.services.IRegisterViewModel>{
+                email: this.email,
+                password: this.password,
+                confirmPassword: this.confirmPassword
+            };
+
+            this.registerService.register(registerViewModel)
+                .then((response: any): void=> {
+                    console.log("registered");
+
+                this.authTokenService.requestToken(registerViewModel)
+                    .then((response: app.services.ITokenResponse): void=> {
+                        this.authTokenService.setToken(response.access_token);
+                });
+
+            }).catch((response: any): void=> {
+                    console.log("Error registering");
+            });
         }
     }
 

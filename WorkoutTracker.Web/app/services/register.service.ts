@@ -2,7 +2,7 @@ module app.services {
     'use strict';
 
     export interface IRegisterService {
-        register(registerViewModel: IRegisterViewModel):void;
+        register(registerViewModel: IRegisterViewModel):ng.IPromise<any>;
     }
 
     export interface IRegisterViewModel {
@@ -13,17 +13,26 @@ module app.services {
 
     class RegisterService implements IRegisterService {
 
-        constructor(private $http: ng.IHttpService) {}
+        constructor(private $http: ng.IHttpService, private $q: ng.IQService) {}
 
-        register(registerViewModel: IRegisterViewModel): void {
+        register(registerViewModel: IRegisterViewModel): ng.IPromise<any> {
+            var deferred = this.$q.defer();
+
             this.$http.post("/api/Account/register", registerViewModel)
-                .then();
+                .success((response: ng.IHttpPromiseCallbackArg<any>): void=> {
+                    deferred.resolve(response);
+                })
+                .catch((reason: ng.IHttpPromiseCallbackArg<any>): void=> {
+                     deferred.reject(reason);
+            });
+            return deferred.promise;
+
         }
     }
 
-    factory.$inject = ["$http"];
-    function factory($http:ng.IHttpService) {
-        return new RegisterService($http);
+    factory.$inject = ["$http", "$q"];
+    function factory($http:ng.IHttpService, $q: ng.IQService) {
+        return new RegisterService($http, $q);
     }
 
     angular.module('app.services')

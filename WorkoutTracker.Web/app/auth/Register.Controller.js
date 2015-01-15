@@ -1,16 +1,33 @@
-var app;
+﻿var app;
 (function (app) {
     (function (auth) {
         'use strict';
 
         var RegisterController = (function () {
-            function RegisterController(authTokenService) {
+            function RegisterController(authTokenService, registerService) {
+                this.authTokenService = authTokenService;
+                this.registerService = registerService;
                 var vm = this;
-                vm.title = "test";
             }
             RegisterController.prototype.submit = function () {
+                var _this = this;
+                var registerViewModel = {
+                    email: this.email,
+                    password: this.password,
+                    confirmPassword: this.confirmPassword
+                };
+
+                this.registerService.register(registerViewModel).then(function (response) {
+                    console.log("registered");
+
+                    _this.authTokenService.requestToken(registerViewModel).then(function (response) {
+                        _this.authTokenService.setToken(response.access_token);
+                    });
+                }).catch(function (response) {
+                    console.log("Error registering");
+                });
             };
-            RegisterController.$inject = ['app.services.AuthTokenService'];
+            RegisterController.$inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
             return RegisterController;
         })();
 

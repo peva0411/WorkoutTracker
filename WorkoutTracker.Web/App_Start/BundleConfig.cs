@@ -29,7 +29,8 @@ namespace WorkoutTracker.Web
                     "~/Scripts/angular-ui-router.js",
                     //Features
                     "~/app/services/services.module.js",
-                    "~/app/services/authToken.services.js",
+                    "~/app/services/authToken.service.js",
+                    "~/app/services/register.service.js",
                     "~/app/auth/auth.module.js",
                     "~/app/auth/auth.routes.js",
                     "~/app/auth/register.controller.js",
