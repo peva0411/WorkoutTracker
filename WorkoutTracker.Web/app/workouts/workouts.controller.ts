@@ -18,8 +18,8 @@
 
         getWorkouts():void {
             this.workoutsService.getWorkouts()
-                .then((response: ng.IHttpPromiseCallbackArg<app.services.IWorkout[]>):void=> {
-                    this.workouts = response.data;
+                .then((response: app.services.IWorkout[]):void=> {
+                    this.workouts = response;
                 })
                 .catch((error: any): void=> {
                     console.log("error getting workouts");

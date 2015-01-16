@@ -11,7 +11,7 @@
             WorkoutsController.prototype.getWorkouts = function () {
                 var _this = this;
                 this.workoutsService.getWorkouts().then(function (response) {
-                    _this.workouts = response.data;
+                    _this.workouts = response;
                 }).catch(function (error) {
                     console.log("error getting workouts");
                 });

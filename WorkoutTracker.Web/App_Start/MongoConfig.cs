@@ -22,7 +22,7 @@ namespace WorkoutTracker.Web.App_Start
                     new Workout()
                     {
                         Name = "testWorkout",
-                        Username = "testUser@mail.com",
+                        Username = "phil@test.com",
                         Date = DateTime.Now,
                         Exercises = new List<Exercise>()
                         {
@@ -46,7 +46,7 @@ namespace WorkoutTracker.Web.App_Start
                      new Workout()
                     {
                         Name = "testWorkout2",
-                        Username = "testUser@mail.com",
+                        Username = "phil@test.com",
                         Date = DateTime.Now.AddDays(-1),
                         Exercises = new List<Exercise>()
                         {
