@@ -17,6 +17,12 @@
                 templateUrl: 'app/auth/register.html',
                 controller: 'app.auth.RegisterController',
                 controllerAs: 'vm'
+            })
+            .state('login', <ng.ui.IState>{
+                url: '/login',
+                templateUrl: 'app/auth/login.html',
+                controller: 'app.auth.LoginController',
+                controllerAs: 'vm'
             });
-    }
+           }
 })();

@@ -31,13 +31,23 @@ namespace WorkoutTracker.Web
                     "~/app/services/services.module.js",
                     "~/app/services/authToken.service.js",
                     "~/app/services/register.service.js",
+                    "~/app/services/workouts.service.js",
+                    
 
                     //Features
                     "~/app/blocks/blocks.module.js",
                      "~/app/blocks/authInterceptor.service.js",
-                    "~/app/auth/auth.module.js",
+                    
+                     "~/app/auth/auth.module.js",
                     "~/app/auth/auth.routes.js",
                     "~/app/auth/register.controller.js",
+                    "~/app/auth/login.controller.js",
+                    
+
+                    "~/app/workouts/workouts.module.js",
+                    "~/app/workouts/workouts.routes.js",
+                    "~/app/workouts/workouts.controller.js",
+                    
                     "~/app/core/core.module.js",
                     "~/app/app.module.js",
                     "~/app/app.config.js"

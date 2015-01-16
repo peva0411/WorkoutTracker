@@ -215,7 +215,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\auth\login.html" />
     <Content Include="app\auth\register.html" />
+    <Content Include="app\workouts\workouts.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -298,13 +300,18 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\auth\auth.module.ts" />
     <TypeScriptCompile Include="app\auth\auth.routes.ts" />
-    <TypeScriptCompile Include="app\auth\Register.Controller.ts" />
+    <TypeScriptCompile Include="app\auth\login.controller.ts" />
+    <TypeScriptCompile Include="app\auth\register.controller.ts" />
     <TypeScriptCompile Include="app\blocks\authInterceptor.service.ts" />
     <TypeScriptCompile Include="app\blocks\blocks.module.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
     <TypeScriptCompile Include="app\services\authToken.service.ts" />
     <TypeScriptCompile Include="app\services\register.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
+    <TypeScriptCompile Include="app\services\workouts.service.ts" />
+    <TypeScriptCompile Include="app\workouts\workouts.controller.ts" />
+    <TypeScriptCompile Include="app\workouts\workouts.module.ts" />
+    <TypeScriptCompile Include="app\workouts\workouts.routes.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

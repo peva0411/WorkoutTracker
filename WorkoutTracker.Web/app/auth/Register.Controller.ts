@@ -31,10 +31,10 @@ module app.auth {
                 .then((response: any): void=> {
                     console.log("registered");
 
-                this.registerService.requestToken(registerViewModel)
-                    .then((response: app.services.ITokenResponse): void=> {
-                        this.authTokenService.setToken(response.access_token);
-                });
+                    this.registerService.requestToken(registerViewModel)
+                        .then((response: app.services.ITokenResponse): void=> {
+                            this.authTokenService.setToken(response.access_token);
+                    });
 
             }).catch((response: any): void=> {
                     console.log("Error registering");

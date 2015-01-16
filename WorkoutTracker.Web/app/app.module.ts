@@ -10,6 +10,7 @@
         /*
          * Feature modules
          */
-        'app.auth'
+        'app.auth',
+        'app.workouts'
     ]);
 })();
