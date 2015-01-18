@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    
     padding-bottom: 20px;
 }
 
@@ -10,8 +10,58 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/
+
+.splash {
+    height: 35em;
+    padding-top: 9em;
+    margin-bottom: 2em;
+    background-image: url("steps.jpg");
+    background-size: cover;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#super-title {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.splash-container {
+    padding-bottom: 2em;
+    background-color: #747373;
+    background-color: rgba(39, 39, 39, 0.49);
+    
+}
+
+.splash-row {
+    margin-top: 2em;
+}
+
+.navbar-default-transparent {
+    background: transparent;
+}
+
+.row-alt {
+    background: #4e5d6c;
+}
+
+.container-content {
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+.form-center {
+    text-align: center;
+    margin-top: 5em;
+}
+
+.form-center button {
+    margin-top: 5px;
+    width: 100%
 }

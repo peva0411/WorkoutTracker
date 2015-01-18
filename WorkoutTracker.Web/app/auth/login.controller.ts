@@ -13,10 +13,12 @@
         password: string;
 
 
-        static $inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
+        static $inject = ['$state', 'app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];
         
-        constructor(private authTokenService: app.services.IAuthTokenService,
-            private registerService: app.services.IRegisterService) {
+        constructor(private $state: ng.ui.IStateService,
+            private authTokenService: app.services.IAuthTokenService,
+            private registerService: app.services.IRegisterService,
+            private loggerService: app.blocks.logger.ILoggerService) {
             var vm = this;
         }
 
@@ -29,11 +31,13 @@
 
             this.registerService.requestToken(registerViewModel)
                 .then((response: app.services.ITokenResponse): void=> {
-                    this.authTokenService.setToken(response.access_token);
+                    this.authTokenService.setToken({userName:response.userName, access_token: response.access_token});
                     console.log("Logged In");
-            });
-        }
+                    this.loggerService.success("Welcome back " + response.userName);
+                   this.$state.go("home");
+             });
 
+        }
     }
 
     angular.module('app.auth')

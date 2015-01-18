@@ -15,10 +15,10 @@
              if (config.url.indexOf('api') === -1)
                  return config;
 
-             var token = this.authTokenService.getToken();
+             var token =  this.authTokenService.getToken();
 
              if (token)
-                 config.headers.Authorization = 'Bearer ' + token;
+                 config.headers.Authorization = 'Bearer ' + token.access_token;
 
              return config;
          }

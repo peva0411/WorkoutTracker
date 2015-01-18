@@ -6,6 +6,8 @@
         'app.core',
         'app.services',
         'app.blocks',
+        'app.layout',
+        'app.home',
         'app.auth',
         'app.workouts'
     ]);

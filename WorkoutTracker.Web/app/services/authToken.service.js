@@ -10,12 +10,12 @@ var app;
             }
             AuthTokenService.prototype.setToken = function (token) {
                 this.cachedToken = token;
-                this.$window.localStorage.setItem(this.tokenKey, token);
+                this.$window.localStorage.setItem(this.tokenKey, JSON.stringify(token));
             };
 
             AuthTokenService.prototype.getToken = function () {
                 if (!this.cachedToken)
-                    this.cachedToken = this.$window.localStorage.getItem(this.tokenKey);
+                    this.cachedToken = JSON.parse(this.$window.localStorage.getItem(this.tokenKey));
 
                 return this.cachedToken;
             };

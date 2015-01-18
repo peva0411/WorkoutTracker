@@ -33,7 +33,7 @@ module app.auth {
 
                     this.registerService.requestToken(registerViewModel)
                         .then((response: app.services.ITokenResponse): void=> {
-                            this.authTokenService.setToken(response.access_token);
+                            this.authTokenService.setToken({userName: response.userName, access_token:response.access_token});
                     });
 
             }).catch((response: any): void=> {

@@ -10,6 +10,8 @@
         /*
          * Feature modules
          */
+        'app.layout',
+        'app.home',
         'app.auth',
         'app.workouts'
     ]);

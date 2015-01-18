@@ -1,5 +1,5 @@
 ((): void=> {
     'use strict';
 
-    angular.module('app.auth', ['app.services']);
+    angular.module('app.auth', ['app.blocks.logger','app.services']);
 })();

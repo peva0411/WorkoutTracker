@@ -14,7 +14,7 @@
                     var token = _this.authTokenService.getToken();
 
                     if (token)
-                        config.headers.Authorization = 'Bearer ' + token;
+                        config.headers.Authorization = 'Bearer ' + token.access_token;
 
                     return config;
                 };

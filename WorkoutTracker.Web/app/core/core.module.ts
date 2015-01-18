@@ -8,6 +8,7 @@
         /*
          * cross app code modules
          */
+        'app.blocks.logger',
         /*
          * 3rd party modules
          */

@@ -6,8 +6,7 @@
     config.$inject = ["$urlRouterProvider", "$stateProvider"];
 
     function config($urlRouteProvider, $stateProvider) {
-        $urlRouteProvider.otherwise('/');
-
+        //$urlRouteProvider.otherwise('/');
         $stateProvider.state('register', {
             url: '/register',
             templateUrl: 'app/auth/register.html',

@@ -217,11 +217,19 @@
   <ItemGroup>
     <Content Include="app\auth\login.html" />
     <Content Include="app\auth\register.html" />
+    <Content Include="app\home\home.html" />
+    <Content Include="app\layout\topnav.html" />
     <Content Include="app\workouts\workouts.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\steps.jpg" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -251,6 +259,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -262,6 +276,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -304,7 +320,15 @@
     <TypeScriptCompile Include="app\auth\register.controller.ts" />
     <TypeScriptCompile Include="app\blocks\authInterceptor.service.ts" />
     <TypeScriptCompile Include="app\blocks\blocks.module.ts" />
+    <TypeScriptCompile Include="app\blocks\logger\logger.module.ts" />
+    <TypeScriptCompile Include="app\blocks\logger\logger.service.ts" />
+    <TypeScriptCompile Include="app\core\core.constants.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
+    <TypeScriptCompile Include="app\home\home.controller.ts" />
+    <TypeScriptCompile Include="app\home\home.module.ts" />
+    <TypeScriptCompile Include="app\home\home.routes.ts" />
+    <TypeScriptCompile Include="app\layout\layout.module.ts" />
+    <TypeScriptCompile Include="app\layout\shell.controller.ts" />
     <TypeScriptCompile Include="app\services\authToken.service.ts" />
     <TypeScriptCompile Include="app\services\register.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
@@ -321,6 +345,7 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -21,7 +21,7 @@ var app;
                     console.log("registered");
 
                     _this.registerService.requestToken(registerViewModel).then(function (response) {
-                        _this.authTokenService.setToken(response.access_token);
+                        _this.authTokenService.setToken({ userName: response.userName, access_token: response.access_token });
                     });
                 }).catch(function (response) {
                     console.log("Error registering");

@@ -11,14 +11,19 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-    <body ng-app="app">
-        <div class="container">
-            <div ui-view></div>
-        </div>
+<body ng-app="app">
 
-  
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/ng")
-    </body>
+    <div ng-controller="app.layout.ShellController as shell">
+        <header>
+            <div ng-include="'/app/layout/topnav.html'"></div>
+        </header>
+
+        <ui-view></ui-view>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ng")
+</body>
 </html>

@@ -8,9 +8,8 @@
 
     function config($urlRouteProvider: ng.ui.IUrlRouterProvider,
                     $stateProvider: ng.ui.IStateProvider): void {
-
-        $urlRouteProvider.otherwise('/');
-
+        //$urlRouteProvider.otherwise('/');
+      
         $stateProvider
             .state('register', <ng.ui.IState>{
                 url: '/register',

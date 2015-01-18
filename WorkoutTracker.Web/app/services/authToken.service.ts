@@ -1,14 +1,15 @@
 module app.services {
     'use strict';
 
+    
     export interface ITokenResponse {
         access_token: string;
         userName:string;
     }
 
     export interface IAuthTokenService {
-        getToken(): string;
-        setToken(token:string): void;
+        getToken(): ITokenResponse;
+        setToken(token:ITokenResponse): void;
         isAuthenticated(): boolean;
         removeToken(): void;
         
@@ -16,19 +17,19 @@ module app.services {
 
     class AuthTokenService implements  IAuthTokenService {
 
-        cachedToken: string
+        cachedToken: ITokenResponse
         tokenKey: string = 'userToken'
 
         constructor(private $window: ng.IWindowService) { }
 
-        setToken(token: string) {
+        setToken(token: ITokenResponse) {
             this.cachedToken = token;
-            this.$window.localStorage.setItem(this.tokenKey, token);
+            this.$window.localStorage.setItem(this.tokenKey, JSON.stringify(token));
         }
 
-        getToken(): string {
+        getToken(): ITokenResponse {
             if (!this.cachedToken)
-                this.cachedToken = this.$window.localStorage.getItem(this.tokenKey);
+                this.cachedToken = JSON.parse(this.$window.localStorage.getItem(this.tokenKey));
 
             return this.cachedToken;
         }

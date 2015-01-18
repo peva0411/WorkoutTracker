@@ -22,22 +22,37 @@ namespace WorkoutTracker.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/toastr.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/ng").Include(
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-ui-router.js",
+                    "~/Scripts/toastr.js",
 
                     "~/app/services/services.module.js",
                     "~/app/services/authToken.service.js",
                     "~/app/services/register.service.js",
                     "~/app/services/workouts.service.js",
                     
+                    //Logger
+                    "~/app/blocks/logger/logger.module.js",
+                    "~/app/blocks/logger/logger.service.js",
 
                     //Features
                     "~/app/blocks/blocks.module.js",
+
+
                      "~/app/blocks/authInterceptor.service.js",
                     
+                    "~/app/layout/layout.module.js",
+                    "~/app/layout/shell.controller.js",
+
+                    "~/app/home/home.module.js",
+                    "~/app/home/home.routes.js",
+                    "~/app/home/home.controller.js",
+                     
                      "~/app/auth/auth.module.js",
                     "~/app/auth/auth.routes.js",
                     "~/app/auth/register.controller.js",
@@ -48,7 +63,10 @@ namespace WorkoutTracker.Web
                     "~/app/workouts/workouts.routes.js",
                     "~/app/workouts/workouts.controller.js",
                     
+                    //core
                     "~/app/core/core.module.js",
+                    "~/app/core/core.constants.js",
+
                     "~/app/app.module.js",
                     "~/app/app.config.js"
                 ));

@@ -4,9 +4,11 @@
         'use strict';
 
         var LoginController = (function () {
-            function LoginController(authTokenService, registerService) {
+            function LoginController($state, authTokenService, registerService, loggerService) {
+                this.$state = $state;
                 this.authTokenService = authTokenService;
                 this.registerService = registerService;
+                this.loggerService = loggerService;
                 var vm = this;
             }
             LoginController.prototype.login = function () {
@@ -18,11 +20,13 @@
                 };
 
                 this.registerService.requestToken(registerViewModel).then(function (response) {
-                    _this.authTokenService.setToken(response.access_token);
+                    _this.authTokenService.setToken({ userName: response.userName, access_token: response.access_token });
                     console.log("Logged In");
+                    _this.loggerService.success("Welcome back " + response.userName);
+                    _this.$state.go("home");
                 });
             };
-            LoginController.$inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
+            LoginController.$inject = ['$state', 'app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];
             return LoginController;
         })();
 
