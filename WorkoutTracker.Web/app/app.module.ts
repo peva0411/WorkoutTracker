@@ -7,6 +7,7 @@
         'app.core',
         'app.services',
         'app.blocks',
+        'app.widgets',
         /*
          * Feature modules
          */

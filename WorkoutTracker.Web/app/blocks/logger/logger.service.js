@@ -12,7 +12,7 @@
                 }
                 LoggerServivce.prototype.error = function (message, data, title) {
                     this.toastr.error(message, title);
-                    this.$log.error(['Error: ' + message, data]);
+                    // this.$log.error(['Error: ' + message, data]);
                 };
                 LoggerServivce.prototype.info = function (message, data, title) {
                     this.toastr.error(message, title);

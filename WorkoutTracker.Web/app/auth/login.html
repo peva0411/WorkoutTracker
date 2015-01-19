@@ -2,11 +2,16 @@
 <div class="container form-center">
     <div class="row">
         <div class="col-md-offset-4 col-md-4">
-            <form class="form-signin" ng-submit="vm.login()">
+            <form class="form-signin" name="signin" ng-submit="vm.login()" novalidate>
                 <h1 class="form-signin-heading text-muted">Sign In</h1>
-                <input type="text" class="form-control" id="email" placeholder="email" ng-model="vm.email" />
-                <input class="form-control" type="password" id="password" placeholder="password" ng-model="vm.password" />
-                <button class="btn btn-primary" type="submit">Sign In</button>
+                <input type="email" class="form-control" name="email" placeholder="email" required ng-model="vm.email" />
+                <p class="help-block" ng-show="signin.email.$dirty && signin.email.$invalid">Please enter a valid email</p>
+
+                <input class="form-control" type="password" validate-equals="password"
+                       id="password" name="password" placeholder="password" ng-model="vm.password" required />
+                <p class="help-block" ng-show="signin.password.$dirty && signin.password.$invalid">Please enter a password</p>
+
+                <button class="btn btn-primary" type="submit" ng-disabled="signin.$invalid">Sign In</button>
             </form>
         </div>
     </div>

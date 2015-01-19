@@ -19,7 +19,7 @@ module app.blocks.logger {
 
         error(message: string, data?: any, title?: string): void {
             this.toastr.error(message, title);
-            this.$log.error(['Error: ' + message, data]);
+           // this.$log.error(['Error: ' + message, data]);
         }
         info(message: string, data?: any, title?: string): void {
             this.toastr.error(message, title);

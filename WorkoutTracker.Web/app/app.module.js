@@ -6,6 +6,7 @@
         'app.core',
         'app.services',
         'app.blocks',
+        'app.widgets',
         'app.layout',
         'app.home',
         'app.auth',

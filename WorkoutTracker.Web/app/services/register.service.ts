@@ -12,6 +12,10 @@ module app.services {
         confirmPassword: string;
     }
 
+    export interface ILoginErrorResponse {
+        error_description: string
+    }
+
     class RegisterService implements IRegisterService {
 
         constructor(private $http: ng.IHttpService, private $q: ng.IQService) {}

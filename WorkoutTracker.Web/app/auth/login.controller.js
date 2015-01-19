@@ -24,6 +24,8 @@
                     console.log("Logged In");
                     _this.loggerService.success("Welcome back " + response.userName);
                     _this.$state.go("home");
+                }).catch(function (errorRespose) {
+                    _this.loggerService.error(errorRespose.data.error_description, null, "Could not sign in");
                 });
             };
             LoginController.$inject = ['$state', 'app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];

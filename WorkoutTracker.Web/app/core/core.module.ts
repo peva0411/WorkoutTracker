@@ -5,6 +5,7 @@
         /*
          * Angular Modules 
          */
+        'ngAnimate',
         /*
          * cross app code modules
          */

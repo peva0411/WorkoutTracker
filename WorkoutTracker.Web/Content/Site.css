@@ -43,7 +43,12 @@ textarea {
     margin-top: 2em;
 }
 
-.navbar-default-transparent {
+.transparent-base {
+    -webkit-transistion: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.transparent {
     background: transparent;
 }
 
@@ -65,3 +70,4 @@ textarea {
     margin-top: 5px;
     width: 100%
 }
+

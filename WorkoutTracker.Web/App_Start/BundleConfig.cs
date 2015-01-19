@@ -29,6 +29,7 @@ namespace WorkoutTracker.Web
             bundles.Add(new ScriptBundle("~/bundles/ng").Include(
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-ui-router.js",
+                    "~/Scripts/angular-animate.js",
                     "~/Scripts/toastr.js",
 
                     "~/app/services/services.module.js",
@@ -53,7 +54,7 @@ namespace WorkoutTracker.Web
                     "~/app/home/home.routes.js",
                     "~/app/home/home.controller.js",
                      
-                     "~/app/auth/auth.module.js",
+                    "~/app/auth/auth.module.js",
                     "~/app/auth/auth.routes.js",
                     "~/app/auth/register.controller.js",
                     "~/app/auth/login.controller.js",
@@ -66,6 +67,9 @@ namespace WorkoutTracker.Web
                     //core
                     "~/app/core/core.module.js",
                     "~/app/core/core.constants.js",
+
+                    "~/app/widgets/widgets.module.js",
+                    "~/app/widgets/scrollHeader.directive.js",
 
                     "~/app/app.module.js",
                     "~/app/app.config.js"

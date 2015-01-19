@@ -232,6 +232,8 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
@@ -265,6 +267,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -333,6 +336,8 @@
     <TypeScriptCompile Include="app\services\register.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
     <TypeScriptCompile Include="app\services\workouts.service.ts" />
+    <TypeScriptCompile Include="app\widgets\scrollHeader.directive.ts" />
+    <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.controller.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.module.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.routes.ts" />

@@ -35,7 +35,9 @@
                     console.log("Logged In");
                     this.loggerService.success("Welcome back " + response.userName);
                    this.$state.go("home");
-             });
+             }).catch((errorRespose: any): void => {
+                this.loggerService.error(errorRespose.data.error_description, null, "Could not sign in");
+            });
 
         }
     }
