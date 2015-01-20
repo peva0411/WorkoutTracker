@@ -13,24 +13,30 @@ module app.services {
     }
 
     export interface ILoginErrorResponse {
-        error_description: string
+        error_description: string;
     }
+
+    export interface IModelState {
+        modelPassword: string[];
+    }
+
+    export interface IModelStateError {
+        Message: string;
+        ModelState: IModelState;
+    }
+
 
     class RegisterService implements IRegisterService {
 
         constructor(private $http: ng.IHttpService, private $q: ng.IQService) {}
 
-        register(registerViewModel: IRegisterViewModel): ng.IPromise<any> {
-            var deferred = this.$q.defer();
-
-            this.$http.post("/api/Account/register", registerViewModel)
-                .success((response: ng.IHttpPromiseCallbackArg<any>): void => {
-                    deferred.resolve(response);
-                })
-                .catch((reason: ng.IHttpPromiseCallbackArg<any>): void => {
-                     deferred.reject(reason);
+        register(registerViewModel: IRegisterViewModel): ng.IPromise<void> {
+            return this.$http.post("/api/Account/register", registerViewModel)
+                .then((response: ng.IHttpPromiseCallbackArg<any>): void=> {
+                    return response.data;
+                }).catch((error: ng.IHttpPromiseCallbackArg<any>): void=> {
+                    return error.data;
             });
-            return deferred.promise;
         }
 
         requestToken(registerViewModel: app.services.IRegisterViewModel): ng.IPromise<ITokenResponse> {

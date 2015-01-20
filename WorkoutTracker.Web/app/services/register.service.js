@@ -9,14 +9,11 @@ var app;
                 this.$q = $q;
             }
             RegisterService.prototype.register = function (registerViewModel) {
-                var deferred = this.$q.defer();
-
-                this.$http.post("/api/Account/register", registerViewModel).success(function (response) {
-                    deferred.resolve(response);
-                }).catch(function (reason) {
-                    deferred.reject(reason);
+                return this.$http.post("/api/Account/register", registerViewModel).then(function (response) {
+                    return response.data;
+                }).catch(function (error) {
+                    return error.data;
                 });
-                return deferred.promise;
             };
 
             RegisterService.prototype.requestToken = function (registerViewModel) {

@@ -9,14 +9,15 @@ module app.auth {
     }
 
     class RegisterController implements IRegisterScope {
-        static $inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
+        static $inject = ['app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];
 
         email:string;
         password: string;
         confirmPassword:string;
 
         constructor(private authTokenService: app.services.IAuthTokenService,
-                   private registerService: app.services.IRegisterService) {
+            private registerService: app.services.IRegisterService,
+            private loggerService: app.blocks.logger.ILoggerService) {
             var vm = this;
         }
 
@@ -31,14 +32,15 @@ module app.auth {
                 .then((response: any): void=> {
                     console.log("registered");
 
-                    this.registerService.requestToken(registerViewModel)
-                        .then((response: app.services.ITokenResponse): void=> {
-                            this.authTokenService.setToken({userName: response.userName, access_token:response.access_token});
-                    });
+                this.registerService.requestToken(registerViewModel)
+                    .then((response: app.services.ITokenResponse): void=> {
+                        this.authTokenService.setToken({ userName: response.userName, access_token: response.access_token });
+                        this.loggerService.success("Created account for " + response.userName);
 
-            }).catch((response: any): void=> {
-                    console.log("Error registering");
-            });
+                    });
+            }).catch((errorResponse: app.services.IModelStateError): void=> {
+                    this.loggerService.error(errorResponse.ModelState.modelPassword[0]);
+                });
         }
     }
 

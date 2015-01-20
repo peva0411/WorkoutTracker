@@ -1,12 +1,13 @@
-var app;
+﻿var app;
 (function (app) {
     (function (auth) {
         'use strict';
 
         var RegisterController = (function () {
-            function RegisterController(authTokenService, registerService) {
+            function RegisterController(authTokenService, registerService, loggerService) {
                 this.authTokenService = authTokenService;
                 this.registerService = registerService;
+                this.loggerService = loggerService;
                 var vm = this;
             }
             RegisterController.prototype.submit = function () {
@@ -22,12 +23,13 @@ var app;
 
                     _this.registerService.requestToken(registerViewModel).then(function (response) {
                         _this.authTokenService.setToken({ userName: response.userName, access_token: response.access_token });
+                        _this.loggerService.success("Created account for " + response.userName);
                     });
-                }).catch(function (response) {
-                    console.log("Error registering");
+                }).catch(function (errorResponse) {
+                    _this.loggerService.error(errorResponse.ModelState.modelPassword[0]);
                 });
             };
-            RegisterController.$inject = ['app.services.AuthTokenService', 'app.services.RegisterService'];
+            RegisterController.$inject = ['app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];
             return RegisterController;
         })();
 
