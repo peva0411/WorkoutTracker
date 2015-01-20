@@ -336,6 +336,7 @@
     <TypeScriptCompile Include="app\services\register.service.ts" />
     <TypeScriptCompile Include="app\services\services.module.ts" />
     <TypeScriptCompile Include="app\services\workouts.service.ts" />
+    <TypeScriptCompile Include="app\widgets\sameAs.directive.ts" />
     <TypeScriptCompile Include="app\widgets\scrollHeader.directive.ts" />
     <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.controller.ts" />

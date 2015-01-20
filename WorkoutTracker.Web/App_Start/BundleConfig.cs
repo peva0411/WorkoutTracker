@@ -70,6 +70,7 @@ namespace WorkoutTracker.Web
 
                     "~/app/widgets/widgets.module.js",
                     "~/app/widgets/scrollHeader.directive.js",
+                    "~/app/widgets/sameAs.directive.js",
 
                     "~/app/app.module.js",
                     "~/app/app.config.js"
