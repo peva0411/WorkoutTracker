@@ -1,4 +1,4 @@
-﻿var app;
+var app;
 (function (app) {
     (function (auth) {
         'use strict';
@@ -26,7 +26,8 @@
                         _this.loggerService.success("Created account for " + response.userName);
                     });
                 }).catch(function (errorResponse) {
-                    _this.loggerService.error(errorResponse.ModelState.modelPassword[0]);
+                    var message = errorResponse.data.ModelState["model.Password"];
+                    _this.loggerService.error(message);
                 });
             };
             RegisterController.$inject = ['app.services.AuthTokenService', 'app.services.RegisterService', 'app.blocks.logger.LoggerService'];

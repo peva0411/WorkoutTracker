@@ -2,7 +2,7 @@ module app.services {
     'use strict';
 
     export interface IRegisterService {
-        register(registerViewModel: IRegisterViewModel): ng.IPromise<any>;
+        register(registerViewModel: IRegisterViewModel): ng.IHttpPromise<void>;
         requestToken(registerViewModel: app.services.IRegisterViewModel): ng.IPromise<ITokenResponse>;
     }
 
@@ -30,13 +30,16 @@ module app.services {
 
         constructor(private $http: ng.IHttpService, private $q: ng.IQService) {}
 
-        register(registerViewModel: IRegisterViewModel): ng.IPromise<void> {
-            return this.$http.post("/api/Account/register", registerViewModel)
-                .then((response: ng.IHttpPromiseCallbackArg<any>): void=> {
-                    return response.data;
-                }).catch((error: ng.IHttpPromiseCallbackArg<any>): void=> {
-                    return error.data;
-            });
+        register(registerViewModel: IRegisterViewModel): ng.IHttpPromise<void> {
+            return this.$http.post<any>('/api/Account/register', registerViewModel);
+
+            //    return this.$http.post<void>("/api/Account/register", registerViewModel)
+            //        .then<void>((response: ng.IHttpPromiseCallbackArg<void>): void=> {
+            //            return response.data;
+            //    }, (errorResponse : ng.IHttpPromiseCallbackArg<any>): string)=>
+            //    {
+
+            //});
         }
 
         requestToken(registerViewModel: app.services.IRegisterViewModel): ng.IPromise<ITokenResponse> {

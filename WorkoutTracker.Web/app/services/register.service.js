@@ -9,11 +9,13 @@ var app;
                 this.$q = $q;
             }
             RegisterService.prototype.register = function (registerViewModel) {
-                return this.$http.post("/api/Account/register", registerViewModel).then(function (response) {
-                    return response.data;
-                }).catch(function (error) {
-                    return error.data;
-                });
+                return this.$http.post('/api/Account/register', registerViewModel);
+                //    return this.$http.post<void>("/api/Account/register", registerViewModel)
+                //        .then<void>((response: ng.IHttpPromiseCallbackArg<void>): void=> {
+                //            return response.data;
+                //    }, (errorResponse : ng.IHttpPromiseCallbackArg<any>): string)=>
+                //    {
+                //});
             };
 
             RegisterService.prototype.requestToken = function (registerViewModel) {

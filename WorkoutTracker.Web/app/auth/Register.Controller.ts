@@ -38,8 +38,9 @@ module app.auth {
                         this.loggerService.success("Created account for " + response.userName);
 
                     });
-            }).catch((errorResponse: app.services.IModelStateError): void=> {
-                    this.loggerService.error(errorResponse.ModelState.modelPassword[0]);
+            }).catch((errorResponse: ng.IHttpPromiseCallbackArg<any>): void=> {
+                    var message = errorResponse.data.ModelState["model.Password"];
+                    this.loggerService.error(message);
                 });
         }
     }
