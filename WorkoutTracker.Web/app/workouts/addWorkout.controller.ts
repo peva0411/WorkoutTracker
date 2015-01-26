@@ -8,6 +8,17 @@
         addSet(exercise: any):void;
     }
 
+
+
+    interface IWorkoutViewModel extends app.services.IWorkout {
+        
+    }
+
+
+    interface IExerciseViewModel extends app.services.IExercise {
+        $$hashKey: string;
+    }
+
     class AddWorkoutController implements IAddWorkoutScope {
 
         static $inject = ['app.services.WorkoutsService', 'app.blocks.logger.LoggerService'];
@@ -39,7 +50,7 @@
             });
         }
 
-        addSet(exercise: any): void {
+        addSet(exercise: IExerciseViewModel): void {
 
             angular.forEach(this.workout.exercises, ex => {
                 if (ex['$$hashKey'] === exercise.$$hashKey) {
