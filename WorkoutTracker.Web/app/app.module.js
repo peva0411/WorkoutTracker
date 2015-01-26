@@ -10,6 +10,7 @@
         'app.layout',
         'app.home',
         'app.auth',
+        'app.dashboard',
         'app.workouts'
     ]);
 })();

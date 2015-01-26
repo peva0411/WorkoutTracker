@@ -59,10 +59,16 @@ namespace WorkoutTracker.Web
                     "~/app/auth/register.controller.js",
                     "~/app/auth/login.controller.js",
                     
+                    //dashboard
+                    "~/app/dashboard/dashboard.module.js",
+                    "~/app/dashboard/dashboard.routes.js",
+                    "~/app/dashboard/dashboard.controller.js",
 
+                    //workouts
                     "~/app/workouts/workouts.module.js",
                     "~/app/workouts/workouts.routes.js",
                     "~/app/workouts/workouts.controller.js",
+                    "~/app/workouts/addWorkout.controller.js",
                     
                     //core
                     "~/app/core/core.module.js",
@@ -71,6 +77,7 @@ namespace WorkoutTracker.Web
                     "~/app/widgets/widgets.module.js",
                     "~/app/widgets/scrollHeader.directive.js",
                     "~/app/widgets/sameAs.directive.js",
+                    "~/app/widgets/sidebar.directive.js",
 
                     "~/app/app.module.js",
                     "~/app/app.config.js"

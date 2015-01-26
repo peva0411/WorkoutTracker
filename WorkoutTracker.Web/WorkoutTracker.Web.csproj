@@ -217,8 +217,11 @@
   <ItemGroup>
     <Content Include="app\auth\login.html" />
     <Content Include="app\auth\register.html" />
+    <Content Include="app\dashboard\dashboard.html" />
     <Content Include="app\home\home.html" />
     <Content Include="app\layout\topnav.html" />
+    <Content Include="app\workouts\addWorkout.html" />
+    <Content Include="app\workouts\exercises.html" />
     <Content Include="app\workouts\workouts.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
@@ -330,6 +333,9 @@
     <TypeScriptCompile Include="app\blocks\logger\logger.service.ts" />
     <TypeScriptCompile Include="app\core\core.constants.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.routes.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.controller.ts" />
+    <TypeScriptCompile Include="app\dashboard\dashboard.module.ts" />
     <TypeScriptCompile Include="app\home\home.controller.ts" />
     <TypeScriptCompile Include="app\home\home.module.ts" />
     <TypeScriptCompile Include="app\home\home.routes.ts" />
@@ -341,7 +347,9 @@
     <TypeScriptCompile Include="app\services\workouts.service.ts" />
     <TypeScriptCompile Include="app\widgets\sameAs.directive.ts" />
     <TypeScriptCompile Include="app\widgets\scrollHeader.directive.ts" />
+    <TypeScriptCompile Include="app\widgets\sidebar.directive.ts" />
     <TypeScriptCompile Include="app\widgets\widgets.module.ts" />
+    <TypeScriptCompile Include="app\workouts\addWorkout.controller.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.controller.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.module.ts" />
     <TypeScriptCompile Include="app\workouts\workouts.routes.ts" />

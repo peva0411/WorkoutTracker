@@ -45,10 +45,12 @@ namespace WorkoutTracker.Web.Controllers
         }
 
         // POST api/workouts
-        public void Post(Workout workout)
+        public IHttpActionResult Post(Workout workout)
         {
             workout.Username = User.Identity.Name;
             _workoutRepository.Save(workout);
+
+            return Ok();
         }
 
         [Route("api/workouts/{workoutId}/exercises")]

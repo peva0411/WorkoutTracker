@@ -38,4 +38,4 @@ var app;
     })(app.auth || (app.auth = {}));
     var auth = app.auth;
 })(app || (app = {}));
-//# sourceMappingURL=register.controller.js.map
+//# sourceMappingURL=Register.Controller.js.map

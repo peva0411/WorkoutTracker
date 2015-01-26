@@ -7,8 +7,9 @@
                 <input type="email" class="form-control" name="email" placeholder="email" required ng-model="vm.email" />
                 <p class="help-block" ng-show="signin.email.$dirty && signin.email.$invalid">Please enter a valid email</p>
 
-                <input class="form-control" type="password" validate-equals="password"
-                       id="password" name="password" placeholder="password" ng-model="vm.password" required />
+                <input class="form-control" type="password" 
+                       name="password" placeholder="password" ng-model="vm.password" required />
+
                 <p class="help-block" ng-show="signin.password.$dirty && signin.password.$invalid">Please enter a password</p>
 
                 <button class="btn btn-primary" type="submit" ng-disabled="signin.$invalid">Sign In</button>

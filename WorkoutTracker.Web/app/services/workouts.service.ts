@@ -1,7 +1,18 @@
 ﻿ module app.services {
      
      export interface IWorkoutService {
-         getWorkouts():ng.IPromise<IWorkout[]>;
+         getWorkouts(): ng.IPromise<IWorkout[]>;
+         createWorkout(workout: IWorkout) : ng.IPromise<any>;
+     }
+
+     export interface IExercise {
+         name: string;
+         sets: ISet[];
+     }
+
+     export interface ISet {
+         reps: number;
+         weight: number;    
      }
 
      export interface IWorkout {
@@ -9,6 +20,7 @@
          name: string;
          username: string;
          date: Date;
+         exercises: IExercise[];
      }
 
      class WorkoutsService implements  IWorkoutService {
@@ -21,6 +33,11 @@
                     return response.data;
              });
          }
+
+         createWorkout(workout: IWorkout) :ng.IPromise<any> {
+             return this.$http.post('/api/Workouts/', workout);
+         }
+
      }
 
    

@@ -13,6 +13,7 @@
             scope.isTransparent = true;
 
             angular.element($window).bind("scroll", function () {
+                //todo: fix so that only happens on home page
                 if (this.pageYOffset >= 200) {
                     scope.isTransparent = false;
                 } else {

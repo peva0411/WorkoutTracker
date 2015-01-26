@@ -10,6 +10,10 @@
                     return response.data;
                 });
             };
+
+            WorkoutsService.prototype.createWorkout = function (workout) {
+                return this.$http.post('/api/Workouts/', workout);
+            };
             return WorkoutsService;
         })();
 
