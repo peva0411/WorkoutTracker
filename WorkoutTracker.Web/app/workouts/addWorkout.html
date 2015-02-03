@@ -39,11 +39,13 @@
                     <div class="form-group">
                         <label class="col-md-1 col-md-offset-3">Weight</label>
                         <input type="number" placeholder="weight" ng-model="set.weight" />
+                        <button class="btn btn-danger btn-sm" type="button" ng-click="vm.removeSet(set)">Remove</button>
                     </div>
+
                  </div>
                     <div class="form-group">
                         <div class="col-md-offset-6">
-                            <button class="btn btn-primary" type="button" ng-click="vm.addSet(exercise)">Add Set</button>
+                            <button class="btn btn-primary"  type="button" ng-click="vm.addSet(exercise)">Add Set</button>
                         </div>
                     </div>
             </div>

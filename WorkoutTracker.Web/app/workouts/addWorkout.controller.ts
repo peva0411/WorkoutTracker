@@ -52,12 +52,21 @@
 
         addSet(exercise: IExerciseViewModel): void {
 
-            angular.forEach(this.workout.exercises, ex => {
+            angular.forEach(this.workout.exercises, ex=> {
                 if (ex['$$hashKey'] === exercise.$$hashKey) {
                     ex.sets.push(<app.services.ISet>{});
                 }
             });
+        }
 
+        removeSet(setToRemove:any):void{
+            
+            angular.forEach(this.workout.exercises, ex => {
+                ex.sets = ex.sets.filter((item: any) : any => {
+                    return item.$$hashKey !== setToRemove.$$hashKey;
+                });
+
+            });
         }
 
 

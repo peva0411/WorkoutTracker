@@ -33,6 +33,14 @@
                     }
                 });
             };
+
+            AddWorkoutController.prototype.removeSet = function (setToRemove) {
+                angular.forEach(this.workout.exercises, function (ex) {
+                    ex.sets = ex.sets.filter(function (item) {
+                        return item.$$hashKey !== setToRemove.$$hashKey;
+                    });
+                });
+            };
             AddWorkoutController.$inject = ['app.services.WorkoutsService', 'app.blocks.logger.LoggerService'];
             return AddWorkoutController;
         })();
