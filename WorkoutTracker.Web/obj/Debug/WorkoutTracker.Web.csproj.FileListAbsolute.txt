@@ -130,3 +130,12 @@ C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\System.Web.Http.Owin.xml
 C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.dll
 C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.pdb
 C:\Users\Phil\Documents\visual studio 2013\Projects\WorkoutTracker\WorkoutTracker.Web\bin\MongoDB.AspNet.Identity.xml
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.dll
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.Common.dll
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.Mvc.dll
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.WebApi.dll
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\WebActivatorEx.dll
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.xml
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.Common.xml
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.Mvc.xml
+C:\Projects\WorkoutTracker\WorkoutTracker.Web\bin\Ninject.Web.WebApi.xml

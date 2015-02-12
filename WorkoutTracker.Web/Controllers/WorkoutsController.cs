@@ -19,16 +19,16 @@ namespace WorkoutTracker.Web.Controllers
     public class WorkoutsController : ApiController
     {
         
-        private readonly IWorkoutRepository _workoutRepository;
+        private readonly IWorkoutRepository workoutRepository;
 
-        public WorkoutsController()
+        public WorkoutsController(IWorkoutRepository workoutRepository)
         {
-            _workoutRepository =  new WorkoutRepository(new WorkoutTrackerContext());
+            this.workoutRepository = workoutRepository;
         }
 
         public IHttpActionResult Get()
         {
-            var workouts = _workoutRepository.GetUserWorkouts(User.Identity.Name);
+            var workouts = workoutRepository.GetUserWorkouts(User.Identity.Name);
              
             return Ok(workouts);
         }
@@ -36,7 +36,7 @@ namespace WorkoutTracker.Web.Controllers
         [Route("api/workouts/{id}")]
         public IHttpActionResult Get(string id)
         {
-            var workout = _workoutRepository.GetWorkoutById(id);
+            var workout = workoutRepository.GetWorkoutById(id);
 
             if (workout == null)
                 return NotFound();
@@ -48,7 +48,7 @@ namespace WorkoutTracker.Web.Controllers
         public IHttpActionResult Post(Workout workout)
         {
             workout.Username = User.Identity.Name;
-            _workoutRepository.Save(workout);
+            workoutRepository.Save(workout);
 
             return Ok();
         }
@@ -56,13 +56,13 @@ namespace WorkoutTracker.Web.Controllers
         [Route("api/workouts/{workoutId}/exercises")]
         public IHttpActionResult PostExercise(string workoutId, Exercise exercise)
         {
-            var workout = _workoutRepository.GetWorkoutById(workoutId);
+            var workout = workoutRepository.GetWorkoutById(workoutId);
             
             if (workout == null) return NotFound();
 
             workout.Exercises.Add(exercise);
 
-            _workoutRepository.Save(workout);
+            workoutRepository.Save(workout);
 
             return Ok();
 
@@ -71,7 +71,7 @@ namespace WorkoutTracker.Web.Controllers
         [Route("api/workouts/{id}/exercises")]
         public IHttpActionResult GetExercises(string id)
         {
-            var workout = _workoutRepository.GetWorkoutById(id);
+            var workout = workoutRepository.GetWorkoutById(id);
 
             if (workout == null)
                 return NotFound();
